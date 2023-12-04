@@ -5,11 +5,11 @@ const Video = () => {
   return (  
     <HoverVideoPlayer
     videoSrc="/volvo.mp4"
-    pausedOverlay={
+    pausedOverlay={ 
       <img
         src="thumbnail-image.jpg"
-        alt=""/>
-    }
+        alt=""
+      /> }
     />
   )
 }
