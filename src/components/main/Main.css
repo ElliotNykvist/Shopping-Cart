@@ -2,9 +2,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding-top: 90px;
   gap: 1.3rem;
+  height: 100vh;
 }
 
 main h1 {
@@ -28,4 +28,115 @@ main li a.active {
   color: rgb(0, 0, 0);
   border-bottom: 2px solid rgb(58, 58, 129);
   padding-bottom: 10px;
+}
+
+.slider {
+  margin-top: 20px;
+}
+
+.cards {
+  display: flex;
+  width: fit-content;
+  gap: 1.3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 300px;
+  height: 400px;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.img-container img {
+  height: 100%; 
+  width: 500px; 
+  object-fit: contain;
+  cursor: pointer;
+
+}
+
+.car-type {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  color: rgb(102, 102, 102);
+  cursor: pointer;
+}
+
+.card h3 {
+  font-weight: 100;
+  color: rgb(102, 102, 102);
+  margin: 0;
+  cursor: pointer;
+}
+
+strong {
+  color: black;
+}
+
+.buying-price {
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+  margin: 0;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.buying-price strong {
+  font-weight: 500;
+
+}
+
+.card-button {
+  display: flex;
+  font-weight: 600;
+  color: rgb(58, 58, 129);
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+  margin-top: 25px;
+}
+
+.card-button div {
+  display: flex;
+  cursor: pointer;
+}
+
+.card-button div a:hover {
+  display: flex;
+  border-bottom: 1px solid rgb(58, 58, 129);  
+}
+
+.prev-next {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.prev-next button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 20px;
+  color: rgb(102, 102, 102);
+  font-weight: 100;
+  margin-top: 30px;
+  cursor: pointer;
 }

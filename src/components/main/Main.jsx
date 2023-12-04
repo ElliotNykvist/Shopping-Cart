@@ -1,4 +1,7 @@
-import './Main.css'
+import './Main.css';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Main = () => {
   return (
@@ -13,6 +16,63 @@ const Main = () => {
             <li><a>Saloon ()</a></li>
           </ul>
         </nav>
+        <div className="slider">
+          <div className="cards">
+            <div className="card">
+                <p className='car-type'>SUV</p>
+                <h3><strong>EX30</strong> plug-in hybrid</h3>
+                <p className="buying-price">Buy from <strong>$35,795</strong></p>
+                <div className='img-container'>
+                  <img src="./volvo.jpg"></img>
+                </div>
+                <div className="card-button">
+                  <div><a>Learn</a><IoIosArrowForward/></div>
+                  <div><a>Shop</a><IoIosArrowForward/></div>
+                </div>
+            </div>
+            <div className="card">
+              <p className='car-type'>SUV</p>
+              <h3><strong>EX30</strong> plug-in hybrid</h3>
+              <p className="buying-price">Buy from <strong>$35,795</strong></p>
+              <div className='img-container'>
+                <img src="./volvo.jpg"></img>
+              </div>
+              <div className="card-button">
+                <div><a>Learn</a><IoIosArrowForward/></div>
+                <div><a>Shop</a><IoIosArrowForward/></div>
+              </div>
+            </div>
+            <div className="card">
+              <p className='car-type'>SUV</p>
+              <h3><strong>EX30</strong> plug-in hybrid</h3>
+              <p className="buying-price">Buy from <strong>$35,795</strong></p>
+              <div className='img-container'>
+                <img src="./volvo.jpg"></img>
+              </div>
+              <div className="card-button">
+                <div><a>Learn</a><IoIosArrowForward/></div>
+                <div><a>Shop</a><IoIosArrowForward/></div>
+              </div>
+            </div>
+            <div className="card">
+              <p className='car-type'>SUV</p>
+              <h3><strong>EX30</strong> plug-in hybrid</h3>
+              <p className="buying-price">Buy from <strong>$35,795</strong></p>
+              <div className='img-container'>
+                <img src="./volvo.jpg"></img>
+              </div>
+              <div className="card-button">
+                <div><a>Learn</a><IoIosArrowForward/></div>
+                <div><a>Shop</a><IoIosArrowForward/></div>
+              </div>
+            </div>
+          </div>
+          <div className="prev-next">
+            <button><IoIosArrowBack className="arrow"/></button>
+            <button><IoIosArrowForward className="arrow"/></button>
+          </div>
+        </div>
+        
     </main>
 
   )
