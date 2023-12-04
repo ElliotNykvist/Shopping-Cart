@@ -1,0 +1,51 @@
+nav {
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+.left svg:hover {
+  cursor: pointer;
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+li a {
+  color: rgb(102, 102, 102);
+}
+
+li a:hover {
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+
+li a:active {
+  color: rgb(0, 0, 0);
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.cart {
+  font-size: 1.5rem;
+}
+
