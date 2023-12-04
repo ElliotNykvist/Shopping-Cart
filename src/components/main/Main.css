@@ -54,15 +54,24 @@ main li a.active {
   justify-content: center;
   width: 100%;
   overflow: hidden;
-
 }
 
 .img-container img {
-  height: 100%; 
-  width: 500px; 
+  height: 140%;
+  width: 140%;
   object-fit: contain;
   cursor: pointer;
+  transition: transform 0.5s ease; /* Add a smooth transition effect */
+}
 
+.card-effect {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card-effect:hover img {
+  transform: scale(1.15);
 }
 
 .car-type {
