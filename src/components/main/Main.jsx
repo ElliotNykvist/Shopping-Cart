@@ -1,9 +1,32 @@
 import './Main.css';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import Card from './Card';
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 
 const Main = () => {
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
+
   return (
     <main>
       <h1>Order your Volvo car online today</h1>
@@ -18,62 +41,9 @@ const Main = () => {
         </nav>
         <div className="slider">
           <div className="cards">
-            <div className="card">
-                <div className="card-effect">
-                  <p className='car-type'>SUV</p>
-                  <h3><strong>EX30</strong> plug-in hybrid</h3>
-                  <p className="buying-price">Buy from <strong>$35,795</strong></p>
-                  <div className='img-container'>
-                    <img src="./volvo.jpg"></img>
-                  </div>
-                </div>
-                <div className="card-button">
-                  <div><a>Learn</a><IoIosArrowForward/></div>
-                  <div><a>Shop</a><IoIosArrowForward/></div>
-                </div>
-            </div>
-            <div className="card">
-                <div className="card-effect">
-                  <p className='car-type'>SUV</p>
-                  <h3><strong>EX30</strong> plug-in hybrid</h3>
-                  <p className="buying-price">Buy from <strong>$35,795</strong></p>
-                  <div className='img-container'>
-                    <img src="./volvo.jpg"></img>
-                  </div>
-                </div>
-                <div className="card-button">
-                  <div><a>Learn</a><IoIosArrowForward/></div>
-                  <div><a>Shop</a><IoIosArrowForward/></div>
-                </div>
-            </div>
-            <div className="card">
-                <div className="card-effect">
-                  <p className='car-type'>SUV</p>
-                  <h3><strong>EX30</strong> plug-in hybrid</h3>
-                  <p className="buying-price">Buy from <strong>$35,795</strong></p>
-                  <div className='img-container'>
-                    <img src="./volvo.jpg"></img>
-                  </div>
-                </div>
-                <div className="card-button">
-                  <div><a>Learn</a><IoIosArrowForward/></div>
-                  <div><a>Shop</a><IoIosArrowForward/></div>
-                </div>
-            </div>
-            <div className="card">
-                <div className="card-effect">
-                  <p className='car-type'>SUV</p>
-                  <h3><strong>EX30</strong> plug-in hybrid</h3>
-                  <p className="buying-price">Buy from <strong>$35,795</strong></p>
-                  <div className='img-container'>
-                    <img src="./volvo.jpg"></img>
-                  </div>
-                </div>
-                <div className="card-button">
-                  <div><a>Learn</a><IoIosArrowForward/></div>
-                  <div><a>Shop</a><IoIosArrowForward/></div>
-                </div>
-            </div>
+          <Carousel responsive={responsive}>
+            <Card />
+          </Carousel>
           </div>
           <div className="prev-next">
             <button><IoIosArrowBack className="arrow"/></button>
