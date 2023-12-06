@@ -1,7 +1,22 @@
+import { useState } from 'react';
 import { FiShoppingCart } from "react-icons/fi";
 import "./Navbar.css";
 
 const NavBar = () => {
+
+/*
+  const [hamburgerOpen, setHamburger] = useState(false);
+
+  const openHamburgerMenu = () => {
+    if (hamburgerOpen === false) {
+      setHamburger(true);
+    } else (hamburgerOpen === true) {
+      setHamburger(false);
+    }
+  }
+*/
+
+
   return (
     <nav>
         <div className="left">
