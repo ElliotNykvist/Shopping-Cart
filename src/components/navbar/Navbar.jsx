@@ -1,5 +1,4 @@
 import { FiShoppingCart } from "react-icons/fi";
-import { IoIosSearch } from "react-icons/io";
 import "./Navbar.css";
 
 const NavBar = () => {

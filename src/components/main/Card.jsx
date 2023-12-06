@@ -1,3 +1,6 @@
+import { IoIosArrowForward } from "react-icons/io";
+// import "./Card.css";
+
 const Card = () => {
   return (
     <div className="card">
@@ -18,5 +21,3 @@ const Card = () => {
 }
 
 export default Card;
-
-

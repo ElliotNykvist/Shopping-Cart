@@ -1,0 +1,79 @@
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-container img {
+  height: 140%;
+  width: 140%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.card-effect {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card-effect:hover img {
+  transform: scale(1.15);
+}
+
+.car-type {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+  color: rgb(102, 102, 102);
+  cursor: pointer;
+}
+
+.card h3 {
+  font-weight: 100;
+  color: rgb(102, 102, 102);
+  margin: 0;
+  cursor: pointer;
+}
+
+strong {
+  color: black;
+}
+
+.buying-price {
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+  margin: 0;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.buying-price strong {
+  font-weight: 500;
+
+}
+
+.card-button {
+  display: flex;
+  font-weight: 600;
+  color: rgb(58, 58, 129);
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+  margin-top: 25px;
+}
+
+.card-button div {
+  display: flex;
+  cursor: pointer;
+}
+
+.card-button div a:hover {
+  display: flex;
+  border-bottom: 1px solid rgb(58, 58, 129);  
+}

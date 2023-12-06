@@ -1,0 +1,21 @@
+/* ResponsiveSlider.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1300px;
+  position: relative;
+  overflow: hidden;
+}
+
+ul {
+  display: flex;
+  height: 100%;
+  list-style: none;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: all 0.75s ease;
+}
+
