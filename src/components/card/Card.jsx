@@ -1,5 +1,4 @@
 import { IoIosArrowForward } from "react-icons/io";
-// import "./Card.css";
 
 const Card = () => {
   return (

@@ -1,4 +1,4 @@
-import ResponsiveSlider from './ResponsiveSlider';
+import ResponsiveSlider from '../responsiveSlider/ResponsiveSlider';
 import "./Main.css";
 
 const Main = () => {

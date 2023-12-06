@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
-import Card from './Card';
+import Card from '../card/Card';
 import './ResponsiveSlider.css';
+
 
 function ResponsiveSlider() {
   const [sliderWidth, setSliderWidth] = useState(0);
