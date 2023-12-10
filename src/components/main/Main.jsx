@@ -11,8 +11,8 @@ const Main = () => {
           <li><a className='active'>All ()</a></li>
           <li><a>SUV ()</a></li>
           <li><a>Crossover ()</a></li>
-          <li><a>Estate ()</a></li>
-          <li><a>Saloon ()</a></li>
+          <li className='nav-hidden'><a>Estate ()</a></li>
+          <li className='nav-hidden'><a>Saloon ()</a></li>
         </ul>
       </nav>
       <div className="slider">

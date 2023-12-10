@@ -19,3 +19,16 @@ ul {
   transition: all 0.75s ease;
 }
 
+@media (max-width: 1300px) {
+  .container {
+    max-width: 80vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    max-width: 30vh;
+  }
+}
+
+
