@@ -34,7 +34,7 @@ const NavBar = () => {
           </li>
         </ul>
       </aside>
-      <div className={`right}`}>
+      <div className="right">
         <a>
           <FiShoppingCart className="cart" />
         </a>

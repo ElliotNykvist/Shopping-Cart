@@ -11,8 +11,8 @@ nav {
 
 .left {
   display: flex;
-  align-items: center;
-  width: 200px;
+  align-items: start;
+  width: 150px;
 }
 
 .left img {
@@ -58,8 +58,8 @@ li a:active {
 .right {
   display: flex;
   align-items: center;
-  width: 200px;
-  justify-content: flex-end;
+  width: 150px;
+  justify-content: end;
 }
 
 .cart {
@@ -141,6 +141,10 @@ li a:active {
   }
 
   .right {
-    width: 0;
+    width: 50px;
+  }
+
+  .left {
+    width: 100px;
   }
 }
