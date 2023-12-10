@@ -1,28 +1,25 @@
+// NavBar.js
 import { useState } from 'react';
-import { FiShoppingCart } from "react-icons/fi";
-import "./Navbar.css";
+import { FiShoppingCart } from 'react-icons/fi';
+import './Navbar.css';
+import Hamburger from './Hamburger';  // Update the import statement
 
+// NavBar component
 const NavBar = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-/*
-  const [hamburgerOpen, setHamburger] = useState(false);
-
-  const openHamburgerMenu = () => {
-    if (hamburgerOpen === false) {
-      setHamburger(true);
-    } else (hamburgerOpen === true) {
-      setHamburger(false);
-    }
-  }
-*/
-
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav>
-        <div className="left">
-          <img alt="volvo" src="/volvo.svg"></img>
-        </div>
-        <ul className="middle">
+      <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      <div className="left">
+        <img alt="volvo" src="/volvo.svg"></img>
+      </div>
+      <aside className={`middle ${isMenuOpen ? 'menu-open' : ''}`}>
+        <ul>
           <li>
             <a>Our cars</a>
           </li>
@@ -36,11 +33,14 @@ const NavBar = () => {
             <a>About Us</a>
           </li>
         </ul>
-        <div className="right">
-          <a><FiShoppingCart className="cart"/></a>
-        </div>
-      </nav>
-  )
-}
+      </aside>
+      <div className={`right}`}>
+        <a>
+          <FiShoppingCart className="cart" />
+        </a>
+      </div>
+    </nav>
+  );
+};
 
 export default NavBar;

@@ -1,31 +1,13 @@
+import './Hamburger.css';
 
-const Hamburger  = () => {
+const Hamburger = ({ toggleMenu, isMenuOpen }) => {
   return (
-    <>
-    <label className="hamburger">
-    <input type="checkbox"></input>
-    </label>
-    <aside className="sidebar">
-      <nav>
-      <ul className="middle">
-          <li>
-            <a>Our cars</a>
-          </li>
-          <li>
-            <a>Shop</a>
-          </li>
-          <li>
-            <a>Owners</a>
-          </li>
-          <li>
-            <a>About Us</a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-    </>
+    <div className="hamburger" onClick={toggleMenu}>
+      <div className={`bar bar1 ${isMenuOpen ? 'open' : ''}`}></div>
+      <div className={`bar bar2 ${isMenuOpen ? 'open' : ''}`}></div>
+      <div className={`bar bar3 ${isMenuOpen ? 'open' : ''}`}></div>
+    </div>
+  );
+};
 
-  )
-}
-
-export default Hamburger;
+export default Hamburger;  // Add this line to export the component
