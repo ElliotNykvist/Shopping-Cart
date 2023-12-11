@@ -3,7 +3,7 @@ import HoverVideoPlayer from 'react-hover-video-player';
 
 const Video = () => {
   return ( 
-    <>
+    <container>
       <HoverVideoPlayer className="video"
       videoSrc="/volvo.mp4"
       pausedOverlay={ 
@@ -17,7 +17,7 @@ const Video = () => {
         <p>Maximise your savings now by combining your exclusive offers.</p>
         <button>View Offers</button>
       </div>
-    </>
+    </container>
   )
 }
 

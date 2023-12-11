@@ -1,0 +1,105 @@
+.dropdown {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 80vh;
+  z-index: 4;
+  padding: 50px;
+  padding-top: 25px;
+  background-color: white;
+}
+
+.dropdown nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  height: 97%;
+  gap: 0;
+  border-right: 1px solid rgb(216, 216, 216);
+  padding-left: 10%;
+  padding: 0 auto;
+}
+
+.dropdown nav ul {
+  display: flex;
+  flex-direction: column;
+  height: 34%;
+  width: 150px;
+  gap: 35px;
+  align-items: start;
+}
+
+.dropdown nav ul li {
+  display: flex;
+  flex-direction: column;
+  color: rgb(102, 102, 102);
+  gap: 6px;
+  cursor: pointer;
+  padding-left: 15px;
+}
+
+.dropdown h1 {
+  font-size: 20px;
+}
+
+.dropdown p {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 10%;
+  gap: 5px;
+  width: 150px;
+}
+
+.offer h1 {
+  font-size: 12px;
+  color: rgb(1, 145, 1);
+}
+
+.offer div {
+  display: flex;
+  align-items: center;
+  color: rgb(51, 105, 185);
+  font-size: 16px;
+  list-style-type: none;
+  cursor: pointer;
+  
+
+}
+.offer li:hover {
+  border-bottom: 1px solid rgb(51, 105, 185);
+}
+
+.dropdown nav ul li.active {
+  display: flex;
+  flex-direction: column;
+  color: rgb(102, 102, 102);
+  gap: 6px;
+}
+
+.dropdown .border.active {
+  color: rgb(0, 0, 0);
+  border-left: 0.18rem solid rgb(51, 105, 185);
+  height: 72%;
+}
+
+.dropdown .active h1 {
+  color: black;
+}
+
+.dropdown .active p {
+  color: black;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
