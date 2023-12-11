@@ -12,6 +12,17 @@ const NavBar = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  const toggleDropDown = e => {
+    const currTarget = e.currentTarget;
+
+    document.querySelectorAll(".menu-options").forEach(btn =>
+      btn.classList.remove("active"))
+      currTarget.classList.add("active");
+
+
+
+  }
+
   return (
     <nav>
       <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
@@ -21,16 +32,16 @@ const NavBar = () => {
       <aside className={`middle ${isMenuOpen ? 'menu-open' : ''}`}>
         <ul>
           <li>
-            <a>Our cars</a>
+            <a onClick={toggleDropDown} className="menu-options active">Our cars</a>
           </li>
           <li>
-            <a>Shop</a>
+            <a onClick={toggleDropDown} className="menu-options">Shop</a>
           </li>
           <li>
-            <a>Owners</a>
+            <a onClick={toggleDropDown} className="menu-options">Owners</a>
           </li>
           <li>
-            <a>About Us</a>
+            <a onClick={toggleDropDown} className="menu-options">About Us</a>
           </li>
         </ul>
       </aside>
