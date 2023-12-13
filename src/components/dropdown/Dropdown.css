@@ -1,4 +1,4 @@
-.our-Cars {
+.ourCars {
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -11,13 +11,13 @@
   transition: height 0.3s ease;
 }
 
-.our-Cars.active {
+.ourCars.active {
   visibility: visible;
   opacity: 1;
   height: 70vh;
 }
 
-.our-Cars nav {
+.ourCars nav {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -29,7 +29,7 @@
   padding-left: 10%;
 }
 
-.our-Cars nav ul {
+.ourCars nav ul {
   display: flex;
   flex-direction: column;
   height: 34%;
@@ -38,7 +38,7 @@
   align-items: start;
 }
 
-.our-Cars nav ul li {
+.ourCars nav ul li {
   display: flex;
   flex-direction: column;
   color: rgb(102, 102, 102);
@@ -86,14 +86,14 @@
   border-bottom: 1px solid rgb(51, 105, 185);
 }
 
-.our-Cars nav ul li.active {
+.ourCars nav ul li.active {
   display: flex;
   flex-direction: column;
   color: rgb(102, 102, 102);
   gap: 6px;
 }
 
-.our-Cars .border.active {
+.ourCars .border.active {
   color: rgb(0, 0, 0);
   border-left: 0.18rem solid rgb(51, 105, 185);
   height: 72%;

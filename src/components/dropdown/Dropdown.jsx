@@ -1,10 +1,10 @@
 import './Dropdown.css';
 import { IoIosArrowForward } from 'react-icons/io';
 
-const Dropdown = ({ className }) => {
+const Dropdown = ({ activeDropdown }) => {
   return (
     <>
-      <div className={`dropdown our-Cars ${className}`}>
+      <div className={`dropdown ourCars ${activeDropdown === 'ourCars' ? 'active' : ''}`}>
         <nav>
           <ul>
             <div className='link'>
@@ -38,7 +38,7 @@ const Dropdown = ({ className }) => {
           </div>
         </nav>
       </div>
-      <div className={`dropdown shop`}>
+      <div className={`dropdown shop ${activeDropdown === 'Shop' ? 'active' : ''}`}>
         <nav>
           <ul>
             <li><h3>OWN A VOLVO</h3></li>
@@ -78,7 +78,7 @@ const Dropdown = ({ className }) => {
           </ul>
         </nav>
       </div>
-      <div className={`dropdown owners active`}>
+      <div className={`dropdown owners ${activeDropdown === 'Owners' ? 'active' : ''}`}>
         <nav>
           <ul>
             <li><h3>SERVICE</h3></li>

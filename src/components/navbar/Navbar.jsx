@@ -1,35 +1,20 @@
-// NavBar.js
 import { useState } from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import './Navbar.css';
 import Hamburger from './Hamburger';
 import Dropdown from '../dropdown/Dropdown';
 
-// NavBar component
 const NavBar = () => {
-
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isDropdown, setDropdown] = useState(false); 
-  const [activeLink, setActiveLink] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
-  const toggleLink = (link) => {
-    setActiveLink(link);
+  const onLinkClick = (dropdownName) => {
+    setActiveDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
-
-  const onLinkClick = () => {
-    if(!isDropdown) {
-      setDropdown(true)
-    } else {
-      setDropdown(false)
-    }
-  }
-
-
-
 
   return (
     <>
@@ -40,21 +25,17 @@ const NavBar = () => {
         </div>
         <aside className={`middle ${isMenuOpen ? 'menu-open' : ''}`}>
           <ul>
-            <li onClick={onLinkClick}>
-              <a onClick={() => toggleLink('ourCars')}
-          className={`menu-options ${activeLink === 'ourCars' ? 'active' : ''}`}>Our cars</a>
+            <li onClick={() => onLinkClick('ourCars')}>
+              <a className={`menu-options ${activeDropdown === 'ourCars' ? 'active' : ''}`}>Our cars</a>
             </li>
-            <li onClick={onLinkClick}>
-              <a onClick={() => toggleLink('Shop')}
-          className={`menu-options ${activeLink === 'Shop' ? 'active' : ''}`}>Shop</a>
+            <li onClick={() => onLinkClick('Shop')}>
+              <a className={`menu-options ${activeDropdown === 'Shop' ? 'active' : ''}`}>Shop</a>
             </li>
-            <li onClick={onLinkClick}>
-              <a onClick={() => toggleLink('Owners')}
-          className={`menu-options ${activeLink === 'Owners' ? 'active' : ''}`}>Owners</a>
+            <li onClick={() => onLinkClick('Owners')}>
+              <a className={`menu-options ${activeDropdown === 'Owners' ? 'active' : ''}`}>Owners</a>
             </li>
-            <li onClick={onLinkClick}>
-              <a onClick={() => toggleLink('About Us')}
-          className={`menu-options ${activeLink === 'About Us' ? 'active' : ''}`}>About Us</a>
+            <li onClick={() => onLinkClick('About Us')}>
+              <a className={`menu-options ${activeDropdown === 'About Us' ? 'active' : ''}`}>About Us</a>
             </li>
           </ul>
         </aside>
@@ -64,7 +45,7 @@ const NavBar = () => {
           </a>
         </div>
       </nav>
-      <Dropdown className={isDropdown ? 'active' : ''}/>
+      <Dropdown activeDropdown={activeDropdown} />
     </>
   );
 };
