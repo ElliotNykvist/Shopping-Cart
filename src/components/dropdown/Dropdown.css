@@ -1,12 +1,20 @@
 .dropdown {
   position: fixed;
-  display: flex;
+  visibility: hidden;
+  opacity: 0;
   width: 100vw;
-  height: 80vh;
+  height: 0vh;
   z-index: 4;
   padding: 50px;
   padding-top: 25px;
   background-color: white;
+  transition: height 0.3s ease;
+}
+
+.dropdown.active {
+  visibility: visible;
+  opacity: 1;
+  height: 70vh;
 }
 
 .dropdown nav {
@@ -15,10 +23,10 @@
   justify-content: start;
   align-items: start;
   height: 97%;
+  width: fit-content;
   gap: 0;
   border-right: 1px solid rgb(216, 216, 216);
   padding-left: 10%;
-  padding: 0 auto;
 }
 
 .dropdown nav ul {
@@ -54,7 +62,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  padding-left: 10%;
+  padding-left: 15px;
   gap: 5px;
   width: 150px;
 }
