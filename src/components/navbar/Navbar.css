@@ -1,4 +1,4 @@
-nav {
+.main-nav {
   font-size: 15px;
   font-weight: 600;
   display: flex;
@@ -67,7 +67,7 @@ li .active {
 }
 
 @media (max-width: 767px) {
-  nav {
+  .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;

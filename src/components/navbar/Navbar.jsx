@@ -33,7 +33,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav>
+      <nav className="main-nav">
         <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         <div className="left">
           <img alt="volvo" src="/volvo.svg"></img>

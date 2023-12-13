@@ -1,4 +1,4 @@
-.dropdown {
+.our-Cars {
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -11,13 +11,13 @@
   transition: height 0.3s ease;
 }
 
-.dropdown.active {
+.our-Cars.active {
   visibility: visible;
   opacity: 1;
   height: 70vh;
 }
 
-.dropdown nav {
+.our-Cars nav {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -29,7 +29,7 @@
   padding-left: 10%;
 }
 
-.dropdown nav ul {
+.our-Cars nav ul {
   display: flex;
   flex-direction: column;
   height: 34%;
@@ -38,7 +38,7 @@
   align-items: start;
 }
 
-.dropdown nav ul li {
+.our-Cars nav ul li {
   display: flex;
   flex-direction: column;
   color: rgb(102, 102, 102);
@@ -86,14 +86,14 @@
   border-bottom: 1px solid rgb(51, 105, 185);
 }
 
-.dropdown nav ul li.active {
+.our-Cars nav ul li.active {
   display: flex;
   flex-direction: column;
   color: rgb(102, 102, 102);
   gap: 6px;
 }
 
-.dropdown .border.active {
+.our-Cars .border.active {
   color: rgb(0, 0, 0);
   border-left: 0.18rem solid rgb(51, 105, 185);
   height: 72%;
@@ -110,4 +110,56 @@
 .link {
   display: flex;
   align-items: center;
+}
+
+/* Our cars link dropdown. */
+
+.shop nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 80px;
+}
+
+.shop nav ul {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  gap: 16px;
+}
+
+.shop {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  width: 100vw;
+  height: 0vh;
+  z-index: 4;
+  background-color: white;
+  transition: height 0.3s ease;
+}
+
+.shop.active {
+  visibility: visible;
+  opacity: 1;
+  height: 40vh;
+}
+
+.shop h3 {
+  margin: 0;
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+  font-weight: 500;
+}
+
+.shop a {
+  font-size: 14px;
+  color: black;
+  font-weight: 600;
+  padding: 0 !important;
+}
+
+.shop a.hover {
+  text-decoration: underline;
 }
