@@ -112,24 +112,28 @@
   align-items: center;
 }
 
-/* Our cars link dropdown. */
+/* Shop and Owners link dropdown. */
 
-.shop nav {
+.shop nav, 
+.owners nav {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   height: 100%;
   gap: 80px;
+  padding: 48px;
 }
 
-.shop nav ul {
+.shop nav ul, 
+.owners nav ul {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: fit-content;
   gap: 16px;
 }
 
-.shop {
+.shop,
+.owners {
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -146,20 +150,29 @@
   height: 40vh;
 }
 
-.shop h3 {
+.owners.active {
+  visibility: visible;
+  opacity: 1;
+  height: 30vh;
+}
+
+.shop h3,
+.owners h3 {
   margin: 0;
   font-size: 12px;
   color: rgb(102, 102, 102);
   font-weight: 500;
 }
 
-.shop a {
+.shop a,
+.owners a {
   font-size: 14px;
   color: black;
   font-weight: 600;
   padding: 0 !important;
 }
 
-.shop a.hover {
+.shop a.hover,
+.owners a.hover {
   text-decoration: underline;
 }
