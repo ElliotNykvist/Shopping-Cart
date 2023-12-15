@@ -22,8 +22,8 @@ const NavBar = () => {
       <nav className="main-nav">
         <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         <div className="left">
-          <Link to="/">
-            <img alt="volvo" src="/volvo.svg"></img>
+          <Link to="/" onClick={() => onLinkClick('logo')}>
+            <img alt="volvo" src="/volvo.svg" className={`${activeDropdown === 'logo' ? 'active' : ''}`}></img>
           </Link>
         </div>
         <aside className={`middle ${isMenuOpen ? 'menu-open' : ''}`}>
@@ -43,8 +43,8 @@ const NavBar = () => {
           </ul>
         </aside>
         <div className="right">
-          <Link to="/Cart" className="link">
-            <FiShoppingCart className="cart" />
+          <Link to="/Cart" className="link" onClick={() => onLinkClick('Cart')}>
+            <FiShoppingCart className={`cart ${activeDropdown === 'About Us' ? 'active' : ''}`}/>
             <div className="cartItems">1</div>
           </Link>
         </div>
