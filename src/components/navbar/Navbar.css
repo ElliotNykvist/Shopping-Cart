@@ -38,21 +38,39 @@
   margin: 0 16px;
 }
 
-li a {
+li span {
   color: rgb(102, 102, 102);
 }
 
-li a:hover {
+li span:hover {
   color: rgb(0, 0, 0);
   border-bottom: 1px solid black;
   padding-bottom: 10px;
   cursor: pointer;
 }
 
-li .active {
-  color: rgb(0, 0, 0);
+li .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(102, 102, 102) !important;
+  text-decoration: none;
+}
+
+li .link:hover {
+  color: rgb(0, 0, 0) !important;
   border-bottom: 1px solid black;
+  cursor: pointer;
   padding-bottom: 10px;
+  padding-top: 11px;
+}
+
+li .active {
+  color: rgb(0, 0, 0) !important;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 11px;
 }
 
 .right {
@@ -64,6 +82,22 @@ li .active {
 
 .cart {
   font-size: 1.5rem;
+  color: black;
+}
+
+.cartItems {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  color: white;
+  font-size: 12px;
+  background-color: red;
+  border-radius: 50%;
 }
 
 @media (max-width: 767px) {
@@ -126,6 +160,15 @@ li .active {
   }
 
   .menu-open ul li a:hover {
+    border: none;
+  }
+
+  .menu-open ul li .link {
+    color: white;
+    font-size: 2rem;
+  }
+
+  .menu-open ul li .link:hover {
     border: none;
   }
 

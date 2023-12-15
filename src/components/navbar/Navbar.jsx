@@ -3,6 +3,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import './Navbar.css';
 import Hamburger from './Hamburger';
 import Dropdown from '../dropdown/Dropdown';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -21,28 +22,31 @@ const NavBar = () => {
       <nav className="main-nav">
         <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         <div className="left">
-          <img alt="volvo" src="/volvo.svg"></img>
+          <Link to="/">
+            <img alt="volvo" src="/volvo.svg"></img>
+          </Link>
         </div>
         <aside className={`middle ${isMenuOpen ? 'menu-open' : ''}`}>
           <ul>
             <li onClick={() => onLinkClick('ourCars')}>
-              <a className={`menu-options ${activeDropdown === 'ourCars' ? 'active' : ''}`}>Our cars</a>
+              <span className={`menu-options ${activeDropdown === 'ourCars' ? 'active' : ''}`}>Our cars</span>
             </li>
             <li onClick={() => onLinkClick('Shop')}>
-              <a className={`menu-options ${activeDropdown === 'Shop' ? 'active' : ''}`}>Shop</a>
+              <span className={`menu-options ${activeDropdown === 'Shop' ? 'active' : ''}`}>Shop</span>
             </li>
             <li onClick={() => onLinkClick('Owners')}>
-              <a className={`menu-options ${activeDropdown === 'Owners' ? 'active' : ''}`}>Owners</a>
+              <span className={`menu-options ${activeDropdown === 'Owners' ? 'active' : ''}`}>Owners</span>
             </li>
             <li onClick={() => onLinkClick('About Us')}>
-              <a className={`menu-options ${activeDropdown === 'About Us' ? 'active' : ''}`}>About Us</a>
+              <Link to="/About" className={`link menu-options ${activeDropdown === 'About Us' ? 'active' : ''}`}>About Us</Link>
             </li>
           </ul>
         </aside>
         <div className="right">
-          <a>
+          <Link to="/Cart" className="link">
             <FiShoppingCart className="cart" />
-          </a>
+            <div className="cartItems">1</div>
+          </Link>
         </div>
       </nav>
       <Dropdown activeDropdown={activeDropdown} />

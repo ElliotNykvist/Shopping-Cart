@@ -1,17 +1,23 @@
 import './index.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import Video from './components/video/Video';
-import Main from './components/main/Main';
+import Home from './routes/Home';
+import About from './routes/About';
+import Cart from './routes/Cart';
+import Footer from './components/footer/Footer';
 
 function App() {
-
   return (
-    <>
+    <Router>
       <Navbar />
-      <Video></Video>
-      <Main></Main>
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
 export default App;
