@@ -1,5 +1,5 @@
 .ourCars {
-  position: fixed;
+  position: absolute;
   visibility: hidden;
   opacity: 0;
   width: 100vw;

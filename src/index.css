@@ -5,6 +5,10 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+body.fixed {
+  position: fixed;
+}
+
 ul {
   list-style-type: none;
 }

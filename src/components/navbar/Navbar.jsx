@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import './Navbar.css';
 import Hamburger from './Hamburger';
@@ -8,6 +8,12 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+
+  useEffect(() => {
+    // Whenever the activeDropdown changes, update the isPageFixed state
+    document.body.classList.toggle('fixed', ((activeDropdown === 'ourCars') || (activeDropdown === 'Shop') || (activeDropdown === 'Owners')));
+  }, [activeDropdown]);
+
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -19,7 +25,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="main-nav">
+      <nav className='main-nav'>
         <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         <div className="left">
           <Link to="/" onClick={() => onLinkClick('logo')}>
@@ -37,8 +43,8 @@ const NavBar = () => {
             <li onClick={() => onLinkClick('Owners')}>
               <span className={`menu-options ${activeDropdown === 'Owners' ? 'active' : ''}`}>Owners</span>
             </li>
-            <li onClick={() => onLinkClick('About Us')}>
-              <Link to="/About" className={`link menu-options ${activeDropdown === 'About Us' ? 'active' : ''}`}>About Us</Link>
+            <li onClick={() => onLinkClick('About')}>
+              <Link to="/About" className={`link menu-options ${activeDropdown === 'About' ? 'active' : ''}`}>About Us</Link>
             </li>
           </ul>
         </aside>
