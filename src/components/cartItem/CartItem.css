@@ -1,5 +1,5 @@
 
-.item {
+.cartItem {
   display: flex;
   justify-content: center;
   object-fit: contain;
@@ -8,11 +8,11 @@
   background-color: white;
 }
 
-.item .buying-price {
+.cartItem .buying-price {
   font-size: 14px;
 }
 
-.item h3 {
+.cartItem h3 {
   margin: 0;
 }
 
@@ -27,13 +27,13 @@
   margin: 0;
 }
 
-.item .buttons {
+.cartItem .buttons {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.item button {
+.cartItem button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,13 +46,13 @@
   background-color: white;
 }
 
-.item button.active {
+.cartItem button.active {
   color: black;
   border: 1px solid black;
 }
 
 
-.item .car-type {
+.cartItem .car-type {
   font-size: 14px;
 }
 

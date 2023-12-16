@@ -1,8 +1,8 @@
-import "./Items.css";
+import "./CartItem.css";
 
-const Item = () => {
+const CartItem = () => {
   return (
-    <div className="item">
+    <div className="cartItem">
       <div className="item-container">
         <p className='car-type'>SUV</p>
         <h3><strong>EX30</strong> plug-in hybrid</h3>
@@ -23,4 +23,4 @@ const Item = () => {
   )
 }
 
-export default Item;
+export default CartItem;

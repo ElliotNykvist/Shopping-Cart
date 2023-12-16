@@ -1,6 +1,6 @@
 import { FiShoppingCart } from 'react-icons/fi';
 import './MainCart.css';
-import Item from '../item/Items';
+import CartItem from '../cartItem/CartItem';
 
 const mainCart = () => {
   return (
@@ -11,13 +11,13 @@ const mainCart = () => {
           <h1>Your cart is empty</h1>
         </div>
         <div className='items'>
-          <Item className='item'/>
-          <Item className='item'/>
-          <Item className='item'/>
-          <Item className='item'/>
-          <Item className='item'/>
-          <Item className='item'/>
-          <Item className='item'/>
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
         </div>
       </div>
       <div className='cartRight'>
