@@ -1,7 +1,9 @@
+import MainCart from '../components/mainCart/MainCart';
+
 const Cart = () => {
   return (
-    <div className="Cart-Container">
-
+    <div className="cartContainer">
+      <MainCart />
     </div>
   )
 }

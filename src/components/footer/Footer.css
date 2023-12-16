@@ -1,5 +1,8 @@
 .footerContainer {
-  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 10vh;
   background-color: rgb(240, 240, 240);
 
 }
