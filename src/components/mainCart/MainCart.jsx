@@ -1,12 +1,24 @@
 import { FiShoppingCart } from 'react-icons/fi';
 import './MainCart.css';
+import Item from '../item/Items';
 
 const mainCart = () => {
   return (
     <>
       <div className='cartLeft'>
-        <FiShoppingCart className='cart'/>
-        <h1>Your cart is empty</h1>
+        <div className='empty'>
+          <FiShoppingCart className='cart'/>
+          <h1>Your cart is empty</h1>
+        </div>
+        <div className='items'>
+          <Item className='item'/>
+          <Item className='item'/>
+          <Item className='item'/>
+          <Item className='item'/>
+          <Item className='item'/>
+          <Item className='item'/>
+          <Item className='item'/>
+        </div>
       </div>
       <div className='cartRight'>
         <h1>Total</h1>
