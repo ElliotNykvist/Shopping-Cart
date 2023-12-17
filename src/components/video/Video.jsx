@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Video = () => {
   return ( 
-    <container>
+    <div>
       <HoverVideoPlayer className="video"
       videoSrc="/volvo.mp4"
       pausedOverlay={ 
@@ -18,7 +18,7 @@ const Video = () => {
         <p>Maximise your savings now by combining your exclusive offers.</p>
         <Link to='/Shop'><button>View Offers</button></Link> 
       </div>
-    </container>
+    </div>
   )
 }
 

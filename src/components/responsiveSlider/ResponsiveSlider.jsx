@@ -3,7 +3,6 @@ import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import Card from '../card/Card';
 import './ResponsiveSlider.css';
 
-
 function ResponsiveSlider() {
   const [cars, setCars] = useState([]);
   const [sliderWidth, setSliderWidth] = useState(0);
@@ -12,24 +11,33 @@ function ResponsiveSlider() {
   const sliderListRef = useRef(null);
   const gap = 1.2; // Specify your desired gap between cards here
 
-
   useEffect(() => {
     // Fetch data from the API endpoint
-    fetch('http://localhost:3001/api/volvo-cars')
-      .then(response => response.json())
-      .then(data => setCars(data))
-      .catch(error => console.error('Error fetching data:', error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/volvo-cars', { mode: 'cors' });
+        const data = await response.json();
+        console.log("Server response:", data);
+        setCars(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
     const card = document.querySelector('.card');
-    const cardWidth = card.clientWidth; // Use clientWidth instead of offsetWidth
-    const cardMarginRight = parseInt(window.getComputedStyle(card).marginRight, 10);
+    if (card) {
+      const cardWidth = card.clientWidth; // Use clientWidth instead of offsetWidth
+      const cardMarginRight = parseInt(window.getComputedStyle(card).marginRight, 10);
 
-    setSliderWidth(cardWidth + cardMarginRight + gap);
+      setSliderWidth(cardWidth + cardMarginRight + gap);
 
-    const sliderList = document.querySelector('.slider-list');
-    setItems(sliderList.querySelectorAll('.card').length);
+      const sliderList = document.querySelector('.slider-list');
+      setItems(sliderList.querySelectorAll('.card').length);
+    }
   }, [gap]);
 
   useEffect(() => {
@@ -50,20 +58,22 @@ function ResponsiveSlider() {
     }
   };
 
-
-
   return (
     <div className="container">
       <ul className="slider-list" ref={sliderListRef}>
-        {cars.map((car, index) => (
-          <Card key={index} car={car} />
+        {cars.map((car) => (
+          console.log("Image path:", car.image),
+          <Card key={car.id} car={car} />
         ))}
       </ul>
       <div className="prev-next">
         <button onClick={prevSlide} disabled={count === 0} className={`prev-btn ${count === 0 ? 'active' : ''}`}>
           <IoIosArrowBack />
         </button>
-        <button onClick={nextSlide} disabled={count >= items - 4} className={`next-btn ${count >= items - 4 ? 'active' : ''}`}>
+        <button
+          onClick={nextSlide}
+          disabled={count >= items - 4}
+          className={`next-btn ${count >= items - 4 ? 'active' : ''}`}>
           <IoIosArrowForward />
         </button>
       </div>
@@ -72,28 +82,3 @@ function ResponsiveSlider() {
 }
 
 export default ResponsiveSlider;
-
-
-/*
-const Card = () => {
-  return (
-    <div className="card">
-      <div className="card-effect">
-        <p className='car-type'>SUV</p>
-        <h3><strong>EX30</strong> plug-in hybrid</h3>
-        <p className="buying-price">Buy from <strong>$35,795</strong></p>
-        <div className='img-container'>
-          <img src="./volvo.jpg"></img>
-        </div>
-      </div>
-      <div className="card-button">
-        <div><a>Learn</a><IoIosArrowForward/></div>
-        <div><a>Shop</a><IoIosArrowForward/></div>
-      </div>
-    </div>
-  )
-}
-
-export default Card;
-*/
-
