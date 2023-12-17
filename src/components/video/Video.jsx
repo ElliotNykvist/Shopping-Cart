@@ -1,5 +1,6 @@
 import "./Video.css";
 import HoverVideoPlayer from 'react-hover-video-player';
+import { Link } from "react-router-dom";
 
 const Video = () => {
   return ( 
@@ -15,7 +16,7 @@ const Video = () => {
       <div className="text">
         <h1>Combine & save with <br></br>Volvo Offers</h1>
         <p>Maximise your savings now by combining your exclusive offers.</p>
-        <button>View Offers</button>
+        <Link to='/Shop'><button>View Offers</button></Link> 
       </div>
     </container>
   )

@@ -18,6 +18,13 @@ const mainCart = () => {
           <CartItem />
           <CartItem />
           <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
         </div>
       </div>
       <div className='cartRight'>

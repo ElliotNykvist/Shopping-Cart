@@ -5,11 +5,21 @@ import './ResponsiveSlider.css';
 
 
 function ResponsiveSlider() {
+  const [cars, setCars] = useState([]);
   const [sliderWidth, setSliderWidth] = useState(0);
   const [items, setItems] = useState(0);
   const [count, setCount] = useState(0);
   const sliderListRef = useRef(null);
   const gap = 1.2; // Specify your desired gap between cards here
+
+
+  useEffect(() => {
+    // Fetch data from the API endpoint
+    fetch('http://localhost:3001/api/volvo-cars')
+      .then(response => response.json())
+      .then(data => setCars(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   useEffect(() => {
     const card = document.querySelector('.card');
@@ -40,19 +50,14 @@ function ResponsiveSlider() {
     }
   };
 
+
+
   return (
     <div className="container">
       <ul className="slider-list" ref={sliderListRef}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {cars.map((car, index) => (
+          <Card key={index} car={car} />
+        ))}
       </ul>
       <div className="prev-next">
         <button onClick={prevSlide} disabled={count === 0} className={`prev-btn ${count === 0 ? 'active' : ''}`}>
