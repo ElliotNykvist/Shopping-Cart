@@ -17,7 +17,6 @@ function ResponsiveSlider() {
       try {
         const response = await fetch('http://localhost:3001/api/volvo-cars', { mode: 'cors' });
         const data = await response.json();
-        console.log("Server response:", data);
         setCars(data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -28,16 +27,18 @@ function ResponsiveSlider() {
   }, []);
 
   useEffect(() => {
-    const card = document.querySelector('.card');
-    const cardWidth = card.clientWidth; // Use clientWidth instead of offsetWidth
-    const cardMarginRight = parseInt(window.getComputedStyle(card).marginRight, 10);
+    if (sliderListRef.current) {
+      const card = document.querySelector('.card');
+      if (card) {
+        const cardWidth = card.clientWidth;
+        const cardMarginRight = parseInt(window.getComputedStyle(card).marginRight, 10);
+        setSliderWidth(cardWidth + cardMarginRight + gap);
+        setItems(sliderListRef.current.querySelectorAll('.card').length);
+      }
+    }
+  }, [cars, gap]);
 
-    setSliderWidth(cardWidth + cardMarginRight + gap);
-
-    const sliderList = document.querySelector('.slider-list');
-    setItems(sliderList.querySelectorAll('.card').length);
-  }, [gap]);
-
+  
   useEffect(() => {
     if (sliderListRef.current) {
       sliderListRef.current.style.transform = `translateX(-${count * sliderWidth}px)`;
