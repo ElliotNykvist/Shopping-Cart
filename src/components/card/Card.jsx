@@ -6,7 +6,7 @@ const Card = ({ car }) => {
       <div className="card-effect">
         <p className='car-type'>{car.type}</p>
         <h3><strong>{car.model}</strong> plug-in hybrid</h3>
-        <p className="buying-price">Buy from <strong>$35,795</strong></p>
+        <p className="buying-price">Buy from <strong>${car.price}</strong></p>
         <div className='img-container'>
           <img src={car.image} alt={car.model} />
         </div>
