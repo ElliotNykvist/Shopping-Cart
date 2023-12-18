@@ -1,8 +1,7 @@
 import Item from '../components/item/Item'
 import { useState, useEffect } from 'react';
 
-const Shop = () => {
-
+const Shop = ({ addToCart }) => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -26,7 +25,9 @@ const Shop = () => {
     <div className="shopContainer">
       <div className='shopBox'>
         {cars.map((car) => (
-          <Item key={car.id} car={car} />
+          <Item key={car.id} car={car} addToCart={() => {
+            console.log("Adding to cart:", car);
+            addToCart(car)}}/>
         ))};
       </div>
     </div>

@@ -12,9 +12,15 @@
   color: black;
   border-color: black;
 
-  
 }
 
-.add-To-Cart.active {
+.add-To-Cart:active {
   transform: scale(0.9);
+}
+
+.cartItem h3 {
+  font-weight: 100;
+  color: rgb(102, 102, 102);
+  margin: 0;
+  cursor: pointer;
 }

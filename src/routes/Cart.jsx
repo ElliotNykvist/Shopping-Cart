@@ -1,9 +1,9 @@
 import MainCart from '../components/mainCart/MainCart';
 
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   return (
     <div className="cartContainer">
-      <MainCart />
+      <MainCart cartItems={cartItems}/>
     </div>
   )
 }

@@ -1,21 +1,21 @@
 import "./CartItem.css";
 
-const CartItem = () => {
+const CartItem = ({ carType, model, image, price, quantity, updateQuantity}) => {
   return (
     <div className="cartItem">
       <div className="item-container">
-        <p className='car-type'>SUV</p>
-        <h3><strong>EX30</strong> plug-in hybrid</h3>
+        <p className='car-type'>{carType}</p>
+        <h3><strong>{model}</strong> plug-in hybrid</h3>
         <div className='img-container'>
-          <img src="./volvo.jpg"></img>
+          <img src={image}></img>
         </div>
         <div className="item-price">
           <div className="buttons">
-            <button className="remove-item">-</button>
-            <p>1</p>
-            <button className="add-item active">+</button>
+            <button className="remove-item" onClick={() => updateQuantity('decrement')}>-</button>
+            <p>{quantity}</p>
+            <button className="add-item active" onClick={() => updateQuantity('increment')}>+</button>
           </div>
-          <p className="buying-price">Price <strong>$35,795</strong></p>
+          <p className="buying-price">Price <strong>${(price * quantity).toFixed(2)}</strong></p>
         </div>
         
       </div>
