@@ -29,15 +29,13 @@ function ResponsiveSlider() {
 
   useEffect(() => {
     const card = document.querySelector('.card');
-    if (card) {
-      const cardWidth = card.clientWidth; // Use clientWidth instead of offsetWidth
-      const cardMarginRight = parseInt(window.getComputedStyle(card).marginRight, 10);
+    const cardWidth = card.clientWidth; // Use clientWidth instead of offsetWidth
+    const cardMarginRight = parseInt(window.getComputedStyle(card).marginRight, 10);
 
-      setSliderWidth(cardWidth + cardMarginRight + gap);
+    setSliderWidth(cardWidth + cardMarginRight + gap);
 
-      const sliderList = document.querySelector('.slider-list');
-      setItems(sliderList.querySelectorAll('.card').length);
-    }
+    const sliderList = document.querySelector('.slider-list');
+    setItems(sliderList.querySelectorAll('.card').length);
   }, [gap]);
 
   useEffect(() => {
@@ -57,7 +55,7 @@ function ResponsiveSlider() {
       setCount((prevCount) => prevCount + 1);
     }
   };
-
+  
   return (
     <div className="container">
       <ul className="slider-list" ref={sliderListRef}>
