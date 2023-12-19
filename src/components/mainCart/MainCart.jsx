@@ -28,11 +28,15 @@ const MainCart = ({ cartItems, updateQuantity }) => {
         <h1>Total</h1>
         <div>
           <h2>Sub-total</h2>
-          <p>${cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}</p>
+          <p>{cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toLocaleString()}</p>
         </div>
         <div>
           <h2>Delivery</h2>
-          <p>$29.40</p>
+          <p>$40</p>
+        </div>
+        <div>
+          <h2>Total</h2>
+          <p>{cartItems.reduce((total, item) => total + 40 + item.price * item.quantity, 0).toLocaleString()}</p>
         </div>
         <button>Checkout</button>
       </div>

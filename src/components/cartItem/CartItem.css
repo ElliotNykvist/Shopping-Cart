@@ -46,7 +46,7 @@
   background-color: white;
 }
 
-.cartItem button.active {
+.cartItem button:active {
   color: black;
   border: 1px solid black;
 }

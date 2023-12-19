@@ -61,7 +61,7 @@ strong {
 .card-button {
   display: flex;
   font-weight: 600;
-  color: rgb(58, 58, 129);
+  color: rgb(58, 58, 129) !important;
   justify-content: center;
   align-items: center;
   gap: 7rem;
@@ -73,7 +73,17 @@ strong {
   cursor: pointer;
 }
 
-.card-button div a:hover {
+.card-button div a,
+.card-button div .link-shop {
   display: flex;
-  border-bottom: 1px solid rgb(58, 58, 129);  
+  align-items: center;
+  justify-content: center;
+  color: rgb(58, 58, 129) !important;
+  text-decoration: none;
+}
+
+.card-button div a:hover,
+.card-button div .link-shop:hover {
+  /* Common styling for hover effect */
+  border-bottom: 1px solid rgb(58, 58, 129);
 }

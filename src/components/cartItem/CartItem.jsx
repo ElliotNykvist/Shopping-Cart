@@ -11,11 +11,11 @@ const CartItem = ({ carType, model, image, price, quantity, updateQuantity}) => 
         </div>
         <div className="item-price">
           <div className="buttons">
-            <button className="remove-item" onClick={() => updateQuantity('decrement')}>-</button>
+            <button className="remove-item" onClick={() => { console.log("Decrement clicked"); updateQuantity('decrement'); }}>-</button>
             <p>{quantity}</p>
-            <button className="add-item active" onClick={() => updateQuantity('increment')}>+</button>
+            <button className="add-item" onClick={() => { console.log("Increment clicked"); updateQuantity('increment'); }}>+</button>
           </div>
-          <p className="buying-price">Price <strong>${price * quantity}</strong></p>
+          <p className="buying-price">Price <strong>{((parseInt(price) * quantity).toLocaleString())}</strong></p>
         </div>
         
       </div>

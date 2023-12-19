@@ -30,14 +30,16 @@ function App() {
 
   const updateQuantity = (itemId, action) => {
     setCartItems((prevItems) => {
-      return prevItems.map((item) =>
+      const newItems = prevItems.map((item) =>
         item.id === itemId
           ? {
               ...item,
-              quantity: action === 'increment' ? item.quantity + 1 : Math.max(1, item.quantity - 1),
+              quantity: action === 'increment' ? item.quantity + 1 : Math.max(0, item.quantity - 1),
             }
           : item
       );
+      console.log(newItems); // Log the newItems array
+      return newItems.filter((item) => item.quantity > 0);
     });
   };
 

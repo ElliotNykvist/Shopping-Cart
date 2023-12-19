@@ -46,11 +46,8 @@ const volvoCars = [
   { id: 16, model: 'XC40 Recharge', type: 'SUV', image: imageToBase64('XC40.jpg'), price: 45592},
   { id: 17, model: 'EX30', type: 'SUV', image: imageToBase64('EX30.jpg'), price: 50000},
   // Add more Volvo cars as needed
-].map(car => ({ ...car, price: car.price.toLocaleString() }));
+];
 
-volvoCars.forEach((car) => {
-  car.price = car.price.toLocaleString();
-});
 // Create a route to fetch Volvo car data
 app.get('/api/volvo-cars', (req, res) => {
   res.json(volvoCars);
