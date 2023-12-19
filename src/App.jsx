@@ -1,5 +1,5 @@
 import './index.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Home from './routes/Home';
@@ -10,8 +10,18 @@ import Footer from './components/footer/Footer';
 import ErrorPage from './error-page';
 
 function App() {
+  // Load cart items from local storage on initial render
+  const loadFromLocalStorage = () => {
+    const storedItems = localStorage.getItem('cartItems');
+    return storedItems ? JSON.parse(storedItems) : [];
+  };
 
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(loadFromLocalStorage);
+
+  // Save cart items to local storage whenever there is a change
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (item) => {
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
@@ -39,7 +49,6 @@ function App() {
             }
           : item
       );
-      console.log(newItems); // Log the newItems array
       return newItems.filter((item) => item.quantity > 0);
     });
   };
@@ -50,15 +59,14 @@ function App() {
     totalQuantity += car.quantity;
   });
 
-
   return (
     <Router>
-      <Navbar totalQuantity={totalQuantity}/>
+      <Navbar totalQuantity={totalQuantity} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} updateQuantity={updateQuantity}/>} />
-        <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} updateQuantity={updateQuantity} />} />
+        <Route path="/shop" element={<Shop addToCart={addToCart} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
