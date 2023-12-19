@@ -90,15 +90,19 @@ li .active {
   position: absolute;
   top: 10px;
   right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
   width: 17px;
   height: 17px;
   color: white;
   font-size: 12px;
   background-color: red;
   border-radius: 50%;
+}
+
+.cartItems.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {

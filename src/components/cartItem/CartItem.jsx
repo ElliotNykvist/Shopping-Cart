@@ -15,7 +15,7 @@ const CartItem = ({ carType, model, image, price, quantity, updateQuantity}) => 
             <p>{quantity}</p>
             <button className="add-item active" onClick={() => updateQuantity('increment')}>+</button>
           </div>
-          <p className="buying-price">Price <strong>${(price * quantity).toFixed(2)}</strong></p>
+          <p className="buying-price">Price <strong>${price * quantity}</strong></p>
         </div>
         
       </div>

@@ -41,10 +41,16 @@ function App() {
     });
   };
 
+  let totalQuantity = 0;
+
+  cartItems.forEach((car) => {
+    totalQuantity += car.quantity;
+  });
+
 
   return (
     <Router>
-      <Navbar cartItems={cartItems}/>
+      <Navbar totalQuantity={totalQuantity}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

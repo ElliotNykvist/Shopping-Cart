@@ -5,7 +5,7 @@ import Hamburger from './Hamburger';
 import Dropdown from '../dropdown/Dropdown';
 import { Link } from "react-router-dom";
 
-const NavBar = ({ cartItems }) => {
+const NavBar = ({ totalQuantity }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -22,6 +22,7 @@ const NavBar = ({ cartItems }) => {
   const onLinkClick = (dropdownName) => {
     setActiveDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
+
 
   return (
     <>
@@ -51,7 +52,7 @@ const NavBar = ({ cartItems }) => {
         <div className="right">
           <Link to="/Cart" className="link" onClick={() => onLinkClick('Cart')}>
             <FiShoppingCart className={`cart ${activeDropdown === 'About Us' ? 'active' : ''}`}/>
-            <div className="cartItems">{cartItems.length}</div>
+            <div className={`cartItems ${totalQuantity !== 0 ? 'active' : ''}`}>{totalQuantity}</div>
           </Link>
         </div>
       </nav>
