@@ -1,9 +1,10 @@
+// ResponsiveSlider.jsx
 import { useState, useEffect, useRef } from 'react';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import Card from '../card/Card';
 import './ResponsiveSlider.css';
 
-function ResponsiveSlider() {
+function ResponsiveSlider({ selectedCarType, checkActive }) {
   const [cars, setCars] = useState([]);
   const [sliderWidth, setSliderWidth] = useState(0);
   const [items, setItems] = useState(0);
@@ -17,14 +18,18 @@ function ResponsiveSlider() {
       try {
         const response = await fetch('http://localhost:3001/api/volvo-cars', { mode: 'cors' });
         const data = await response.json();
-        setCars(data);
+        
+        // Filter cars based on the selected type
+        const filteredCars = selectedCarType ? data.filter(car => car.type === selectedCarType) : data;
+
+        setCars(filteredCars);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [selectedCarType]);
 
   useEffect(() => {
     if (sliderListRef.current) {
@@ -38,7 +43,6 @@ function ResponsiveSlider() {
     }
   }, [cars, gap]);
 
-  
   useEffect(() => {
     if (sliderListRef.current) {
       sliderListRef.current.style.transform = `translateX(-${count * sliderWidth}px)`;
@@ -56,13 +60,17 @@ function ResponsiveSlider() {
       setCount((prevCount) => prevCount + 1);
     }
   };
+
+  const handleCardClick = (carType) => {
+    // Call the checkActive function from the Main component
+    checkActive(null, carType);
+  };
   
   return (
     <div className="container">
       <ul className="slider-list" ref={sliderListRef}>
         {cars.map((car) => (
-          console.log("Image path:", car.image),
-          <Card key={car.id} car={car} />
+          <Card key={car.id} car={car} onClick={() => handleCardClick(car.type)} />
         ))}
       </ul>
       <div className="prev-next">
