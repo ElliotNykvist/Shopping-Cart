@@ -43,7 +43,7 @@ h1 {
   transform: scale(0.9);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .video video {
     position: static;
     object-fit: cover;

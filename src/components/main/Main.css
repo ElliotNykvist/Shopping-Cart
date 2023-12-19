@@ -105,7 +105,6 @@ main li a.active {
   main nav {
     display: flex;
     justify-content: center;
-    width: 80vh;
   }
 
 }

@@ -21,7 +21,13 @@ ul {
 
 @media (max-width: 1300px) {
   .container {
-    max-width: 80vh;
+    max-width: 50vh;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    max-width: 40vh;
   }
 }
 
