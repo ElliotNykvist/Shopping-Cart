@@ -26,9 +26,9 @@ const Shop = ({ addToCart }) => {
       <div className='shopBox'>
         {cars.map((car) => (
           <Item key={car.id} car={car} addToCart={() => {
-            console.log("Adding to cart:", car);
+            console.log("Adding to cart:", car)
             addToCart(car)}}/>
-        ))};
+        ))}
       </div>
     </div>
   )

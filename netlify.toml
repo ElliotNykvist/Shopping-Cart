@@ -1,13 +1,12 @@
 [build]
   command = "npm run build"
-  functions = "Server"
-
-[dev]
-  command = "npm start"
-  publish = "public"
-  functions = "Server"
+  functions = "Server"  # Adjust this to point to your functions directory
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[dev]
+  command = "node ./Server/server.mjs"
+  publish = "dist"
