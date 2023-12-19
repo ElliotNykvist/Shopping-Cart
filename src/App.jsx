@@ -7,6 +7,7 @@ import About from './routes/About';
 import Cart from './routes/Cart';
 import Shop from './routes/Shop';
 import Footer from './components/footer/Footer';
+import ErrorPage from './error-page';
 
 function App() {
 
@@ -58,6 +59,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} updateQuantity={updateQuantity}/>} />
         <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </Router>

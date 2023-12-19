@@ -4,12 +4,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   background-color: rgb(240, 240, 240);
 }
 
-.empty {
+.notEmpty {
   display: none;
+}
+
+.empty {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;

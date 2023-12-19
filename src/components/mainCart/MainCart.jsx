@@ -7,11 +7,11 @@ const MainCart = ({ cartItems, updateQuantity }) => {
   return (
     <>
       <div className='cartLeft'>
-        <div className='empty'>
+        <div className={`${cartItems.length == 0 ? 'empty' : 'notEmpty'}`}>
           <FiShoppingCart className='cart'/>
           <h1>Your cart is empty</h1>
         </div>
-        <div className='items'>
+        <div className={`${cartItems.length == 0 ? 'notEmpty' : 'items'}`}>
         {cartItems.map((item) => (
           <CartItem 
           key={item.id}
